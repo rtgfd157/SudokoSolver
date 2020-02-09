@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+
+    <div style="margin:10px"><button type="button"  class="btn btn-primary" id="checkTable">Solve!</button>
+
+        <button type="button" class="btn btn-primary" id="insertnumbers">insert numbers</button>
+    <button type="button" class="btn btn-primary" id="reset">reset data</button>
+        </div>
+        <div style="margin:10px">
+    <h4 id="calculating_mess" style="visibility:hidden"  >   </h4>
+    </div>
+
+<div style="overflow-x:auto;">
+
+
+    <table id="tbIn" cellpadding="0" cellspacing="2">
+        <tbody>
+            {%  for  i in range(1,10)%}
+
+                <tr id="tr3{{(i)}}" cellpadding="0" cellspacing="2" max-width="6vmin" maxlength="1">
+                    {%  for  x in range(1,10)%}
+                        <td id="td3{{(i-1)*9+x}}" cellpadding="2" cellspacing="2" max-width="6vmin" maxlength="1" align="center">
+                            <input id="i3{{(i-1)*9+x}}" type="text" pattern="[0-9]" name="fname" maxlength="1" value="" cellpadding="2" cellspacing="2" max-width="6vmin" size="1" onchange="Check_Input(this)" align="center">
+                        </td>
+                    {%  endfor  %}
+                </tr>
+            {%  endfor  %}
+        </tbody>
+    </table>
+
+</div>
+
+    <br><br>
+
+
+   <h2>Sudoko solver :</h2>
+
+<p>Solving suduko problem with back-tracking(recursion) algorithm.</p>
+<p>When "insert numbers" pressed a hard set of recursion will be needed for solving problem.</p>
+<p>You can also insert set of numbers of your own</p>
+  <p>the sulotion is in js , with help of jQuery.</p>
+
+
+
+<!--
+    <div class="row">
+        <div class="table-responsive col-md-6">
+
+
+
+            <table cellpadding="0" cellspacing="2">
+
+                <tbody>
+
+                {%  for  i in range(1,10)%}
+                        <tr cellpadding="0" cellspacing="2" max-width="6vmin" maxlength="1">
+                            {%  for  x in range(1,10)%}
+                            <td id="t1{{(i-1)*9+x}}" cellpadding="0" cellspacing="2" max-width="6vmin" maxlength="1">
+                                <input type="text" pattern="[0-9]" name="fname" maxlength="1" value="{{i ,x}}" cellpadding="0" cellspacing="2" max-width="6vmin" size="1">
+                            </td>
+                            {%  endfor  %}
+                        </tr>
+                    {%  endfor  %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="table-responsive col-md-6">
+
+
+            <table cellpadding="0" cellspacing="2">
+
+                <tbody>
+                    {%  for  i in range(1,10)%}
+
+                        <tr cellpadding="0" cellspacing="2" max-width="6vmin" maxlength="1">
+                            {%  for  x in range(1,10)%}
+
+                                <td id="t2{{(i-1)*9+x}}" cellpadding="0" cellspacing="2" max-width="6vmin" maxlength="1"> <input type="text" pattern="[0-9]" name="fname" maxlength="1" value="{{(i-1)*9+x}}" cellpadding="0" cellspacing="2" max-width="6vmin" size="1"></td>
+                            {%  endfor  %}
+                        </tr>
+                    {%  endfor  %}
+                </tbody>
+            </table>
+
+
+        </div>
+
+    </div>
+            -->
+
+{% endblock %}
